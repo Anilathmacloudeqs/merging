@@ -32,8 +32,13 @@ jobs:
 
       - name: Merging repo
         run: |
-          pwsh -File ./mergerepo.ps1 -SourceTag ${{ inputs.Tag }} `
+          pwsh -File ./mergerepo.ps1 `
+               -SourceTag ${{ inputs.Tag }} `
+               -TargetBranch prod `
+               -svc_repos_email anilathma@cloudeqs.com `
+               -svc_repos_username Anilathmacloudeqs
         shell: pwsh
+        working-directory: ./.github/workflows
       
       - name: Printing commit ID  
         run: echo "COMMIT ID IS ${{ env.COMMIT_ID }}"
