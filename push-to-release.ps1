@@ -3,13 +3,6 @@ $sourceBranch = "main"
 $destinationBranch = "release"
 $fileToPush = "hello.py"
 
-# Clone the repository
-git clone https://github.com/Anilathmacloudeqs/merging.git
-cd merging
-
-# Checkout the release branch
-git checkout $destinationBranch
-
 # Copy the file from main branch to release branch
 git checkout $sourceBranch -- $fileToPush
 
