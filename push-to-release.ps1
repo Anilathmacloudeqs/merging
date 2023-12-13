@@ -7,6 +7,12 @@ $fileToPush = "hello.py"
 git config --global user.email "actions@github.com"
 git config --global user.name "GitHub Actions"
 
+# Fetch the release branch (create it if it doesn't exist)
+git fetch origin $destinationBranch:$destinationBranch
+
+# Checkout the release branch
+git checkout $destinationBranch
+
 # Copy the file from main branch to release branch
 git checkout $sourceBranch -- $fileToPush
 
