@@ -20,5 +20,5 @@ git checkout $sourceBranch -- $fileToPush
 git add $fileToPush
 git commit -m "Update $fileToPush from $sourceBranch to $destinationBranch"
 
-# Push changes to the release branch
-git push origin $destinationBranch
+# Push changes to the release branch using the personal access token
+git push origin $destinationBranch -u $env:GITHUB_TOKEN
