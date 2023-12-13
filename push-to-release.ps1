@@ -4,7 +4,7 @@ $destinationBranch = "release"
 $fileToPush = "hello.py"
 
 # Print statement
-Write-Host "test1"
+Write-Host "test"
 
 # Set Git user information
 git config --global user.email "actions@github.com"
