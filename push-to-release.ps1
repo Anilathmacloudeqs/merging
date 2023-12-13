@@ -29,7 +29,7 @@ git add .
 git commit -m "Update release branch"
 
 # Push changes to the release branch using a personal access token (replace YOUR_TOKEN and YOUR_USERNAME)
-$token = "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"
+$token = "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"
 $githubUsername = "YOUR_USERNAME"
 git push origin release
 
