@@ -1,18 +1,3 @@
-name: Push to Release Branch
-
-on:
-  push:
-    branches:
-      - main
-
-jobs:
-  push-to-release:
-    runs-on: ubuntu-latest
-    
-    steps:
-    - name: Checkout Repository
-      uses: actions/checkout@v2
-
     - name: Execute PowerShell Script
       shell: pwsh
       run: |
