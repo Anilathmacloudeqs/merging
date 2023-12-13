@@ -3,6 +3,9 @@ $sourceBranch = "main"
 $destinationBranch = "release"
 $fileToPush = "hello.py"
 
+# Print statement
+Write-Host "test1"
+
 # Set Git user information
 git config --global user.email "actions@github.com"
 git config --global user.name "GitHub Actions"
@@ -21,4 +24,4 @@ git add $fileToPush
 git commit -m "Update $fileToPush from $sourceBranch to $destinationBranch"
 
 # Push changes to the release branch using the personal access token
-git push origin $destinationBranch
+git push origin HEAD:$destinationBranch
