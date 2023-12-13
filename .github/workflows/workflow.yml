@@ -21,6 +21,7 @@ jobs:
     - name: Execute PowerShell Script
       shell: pwsh
       run: |
+        Get-ChildItem -Recurse -Path . | Format-Table
         ./.github/workflows/push-to-release.ps1
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
