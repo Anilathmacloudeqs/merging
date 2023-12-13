@@ -15,6 +15,7 @@ jobs:
 
     - name: Execute PowerShell Script
       shell: pwsh
-      run: ./.github/workflows/push-to-release.ps1
+      run: |
+        ./.github/workflows/push-to-release.ps1
       env:
         GITHUB_TOKEN: ${{ secrets.GH_TOKEN }}
