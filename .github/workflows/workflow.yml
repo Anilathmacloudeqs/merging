@@ -17,8 +17,6 @@ jobs:
 
     - name: Push changes
       run: |
-        git config user.email "you@example.com"
-        git config user.name "Your Name"
-        git push origin release
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        git config user.email "anilathma@cloudeqs.com"
+        git config user.name "Anilathmacloudeqs"
+        git push origin release -u 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:Anilathmacloudeqs/release
