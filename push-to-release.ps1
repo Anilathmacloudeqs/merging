@@ -4,8 +4,8 @@ $destinationBranch = "release"
 $fileToPush = "hello.py"
 
 # Clone the repository
-git clone https://github.com/${{ github.repository }}.git
-cd ${{ github.repository_name }}
+git clone https://github.com/Anilathmacloudeqs/merging.git
+cd merging
 
 # Checkout the release branch
 git checkout $destinationBranch
