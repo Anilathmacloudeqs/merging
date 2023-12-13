@@ -13,6 +13,11 @@ jobs:
     - name: Checkout Repository
       uses: actions/checkout@v2
 
+    - name: Display Working Directory
+      run: |
+        pwd
+        ls -R
+
     - name: Execute PowerShell Script
       shell: pwsh
       run: |
