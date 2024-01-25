@@ -1,7 +1,7 @@
 # push-to-release.ps1
 
 # Run the hello.py script
-$pythonScriptPath = ".\hello.py"
+$pythonScriptPath = "./hello.py"
 $result = & python $pythonScriptPath
 
 # Navigate to the repository root
