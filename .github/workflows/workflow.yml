@@ -1,22 +1,30 @@
+name: Push to Release
+
 on:
   push:
     branches:
       - main
 
 jobs:
-  run_script:
-    runs-on: windows-latest
+  push_to_release:
+    runs-on: ubuntu-latest
 
     steps:
     - name: Checkout repository
       uses: actions/checkout@v2
 
-    - name: Run PowerShell script
-      shell: pwsh
-      run: .\push-to-release.ps1
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: 3.x
 
-    - name: Push changes
+    - name: Run hello.py
       run: |
-        git config user.email "anilathma@cloudeqs.com"
-        git config user.name "Anilathmacloudeqs"
-        git push origin release -u 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:Anilathmacloudeqs/release
+        python hello.py
+
+    - name: Run push-to-release.ps1
+      run: |
+        powershell -File push-to-release.ps1
+
+      env:
+        PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
