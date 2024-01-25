@@ -1,6 +1,6 @@
 # push-to-release.ps1
 
-# Run the hello.py script (if needed)
+# Run the hello.py script
 $pythonScriptPath = ".\hello.py"
 $result = & python $pythonScriptPath
 
@@ -11,26 +11,23 @@ cd $PSScriptRoot
 git config user.email "anilathma@cloudeqs.com"
 git config user.name "Anilathmacloudeqs"
 
-# Checkout the release branch or create it if it doesn't exist
-git checkout -B release
+# Ensure we are on the main branch
+git checkout main
+
+# Remove the existing release branch if it exists
+git branch -D release
+
+# Create a new release branch
+git checkout -b release
+
+# Copy hello.py to the root of the repository
+Copy-Item -Path $pythonScriptPath -Destination ".\"
 
 # Add and commit changes
 git add .
-git commit -m "Update release branch"
+git commit -m "Update release branch with hello.py"
 
-# Navigate to the repository root
-cd $PSScriptRoot
-
-# Create a new file or modify an existing one
-echo "Hello, Release Branch!" > release_file.txt
-
-# Add and commit the changes
-git add .
-git commit -m "Update release branch"
-
-# Push changes to the release branch using a personal access token (replace YOUR_TOKEN and YOUR_USERNAME)
-$token = "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"
-$githubUsername = "YOUR_USERNAME"
+# Push changes to the release branch using the PAT stored in repository secrets
+$token = $env:PAT_TOKEN
+$githubUsername = "Anilathmacloudeqs"
 git push origin release
-
-
