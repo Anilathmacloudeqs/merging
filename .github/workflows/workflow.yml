@@ -24,7 +24,8 @@ jobs:
 
     - name: Run push-to-release.ps1
       run: |
-        powershell -File push-to-release.ps1
-
+        pwsh -File push-to-release.ps1
+    
       env:
         PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
+
