@@ -18,10 +18,9 @@ jobs:
       with:
         python-version: 3.x
 
-    - name: Run hello.py
+    - name: Run PowerShell script
       run: |
-        python hello.py
-   
+        pwsh -File tast.ps1
+
       env:
         PAT_TOKEN: ${{ secrets.PAT_TOKEN }}
-
